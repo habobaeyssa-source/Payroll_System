@@ -2,6 +2,7 @@ package org.example;
 
 public class WorkRecord {
     //attribute
+    private int employeeId;
     private int recordId;
     private int month;
     private int year;
@@ -9,19 +10,28 @@ public class WorkRecord {
 
     //constructor
 
-    public WorkRecord(int recordId,int month,int year,double hoursWorked){
+    public WorkRecord(int recordId,int employeeId,int month,int year,double hoursWorked){
         setRecordId(recordId);
         setYear(year);
         setMonth(month);
         setHoursWorked(hoursWorked);
+        setEmployeeId(employeeId);
     }
     //methods
 
     public int getRecordId() {return recordId;}
+    public int getEmployeeId() {return employeeId;}
     public int getMonth() {return month;}
     public int getYear() {return year;}
     public double getHoursWorked() {return hoursWorked;}
 
+
+    private void setEmployeeId(int employeeId) {
+        if (employeeId <= 0) {
+            throw new IllegalArgumentException("Invalid Employee ID");
+        }
+        this.employeeId = employeeId;
+    }
 
     private void setYear(int year) {
         if (year <= 0) {

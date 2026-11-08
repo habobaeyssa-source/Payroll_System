@@ -3,14 +3,13 @@ package org.example;
 public class JobPosition {
     private int positionId;
     private String title;
-    private double baseSalary;
+    public static double baseSalary=5000;
     private double hourlyRate;
     private double allowances;
 
-    public JobPosition(int positionId, String title, double baseSalary, double hourlyRate, double allowances) {
+    public JobPosition(int positionId, String title, double hourlyRate, double allowances) {
         this.positionId = positionId;
         this.title = title;
-        this.baseSalary = baseSalary;
         this.hourlyRate = hourlyRate;
         this.allowances = allowances;
     }
